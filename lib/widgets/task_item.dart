@@ -14,7 +14,7 @@ class TaskItem extends StatelessWidget {
       child: CheckboxListTile(
         value: task.isComplete,
         onChanged: (bool? value) {
-          function(task,);
+          function(task);
         },
         title: Text(task.title!),
       ),

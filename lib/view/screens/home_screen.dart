@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   void initState() {
     // TODO: implement initState
     super.initState();
-    initState();
+    initTabBar();
   }
   @override
   Widget build(BuildContext context) {
