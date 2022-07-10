@@ -5,6 +5,7 @@ import '../../data/task_data.dart';
 import '../../models/task.dart';
 import 'completed_tasks_screen.dart';
 import 'incomplete_tasks_screen.dart';
+import 'new_task_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,6 +21,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
      setState(() {
 
      });
+  }
+  setStateAfterAddNewTask() {
+    setState(() {});
   }
   TabController? tabController;
   initTabBar(){
@@ -42,7 +46,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           Tab(icon: Icon(Icons.cancel),),
         ],),
       ),
-
+      floatingActionButton: FloatingActionButton(onPressed: () { Navigator.push(context,
+          MaterialPageRoute(builder: (context) => NewTaskScreen(setStateAfterAddNewTask),),); },child: Icon(Icons.add),),
       body: TabBarView(controller: tabController!,
         children: [
           AllTasksScreen(changeTaskState),
